@@ -113,7 +113,7 @@ func TestCafeSearch(t *testing.T) {
 		searchLower := strings.ToLower(tc.search)
 		for _, cafe := range cafes {
 			cafeLower := strings.ToLower(cafe)
-			assert.True(t, strings.Contains(cafeLower, searchLower), "кафе '%s' не содержит строку '%s'", cafe, tc.search)
+			assert.Containsf(t, cafeLower, searchLower, "кафе '%s' не содержит строку '%s'", cafe, tc.search)
 		}
 	}
 }
